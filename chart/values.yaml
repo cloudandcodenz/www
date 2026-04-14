@@ -19,5 +19,6 @@ resources:
 gateway:
   name: main
   namespace: infra
+  httpsSection: https-cloudandcode-nz
 
 hostname: cloudandcode.nz

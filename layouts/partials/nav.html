@@ -1,0 +1,35 @@
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo" aria-label="Cloud &amp; Code — Home">
+      <img src="/cloud-and-code.svg" alt="Cloud &amp; Code" class="nav__logo-img" height="28" />
+    </a>
+    <nav class="nav__links" aria-label="Main navigation">
+      <a href="/#services" class="nav__link">Services</a>
+      <a href="/#devex" class="nav__link">Developer Experience</a>
+      
+      <a href="{{ .Site.Params.ctaURL }}" class="btn btn--primary nav__cta" target="_blank" rel="noopener noreferrer">Get Support</a>
+    </nav>
+    <button class="nav__hamburger" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <nav class="nav__mobile" id="navMobile" aria-label="Mobile navigation" hidden>
+    <a href="/#services" class="nav__mobile-link">Services</a>
+    <a href="/#devex" class="nav__mobile-link">Developer Experience</a>
+    
+    <a href="{{ .Site.Params.ctaURL }}" class="nav__mobile-link nav__mobile-cta" target="_blank" rel="noopener noreferrer">Get Support →</a>
+  </nav>
+</header>
+<script>
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var mobile = document.getElementById('navMobile');
+    toggle.addEventListener('click', function () {
+      var open = !mobile.hidden;
+      mobile.hidden = open;
+      toggle.setAttribute('aria-expanded', String(!open));
+    });
+  })();
+</script>

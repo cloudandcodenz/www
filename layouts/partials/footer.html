@@ -1,0 +1,13 @@
+<footer class="footer">
+  <div class="container footer__inner">
+    <a href="/" class="footer__logo" aria-label="Cloud &amp; Code — Home">
+      <img src="/cloud-and-code.svg" alt="Cloud &amp; Code" class="footer__logo-img" height="22" />
+    </a>
+    <nav class="footer__links" aria-label="Footer navigation">
+      <a href="/#services" class="footer__link">Services</a>
+      
+      <a href="{{ .Site.Params.ctaURL }}" class="footer__link" target="_blank" rel="noopener noreferrer">Get Support</a>
+    </nav>
+    <p class="footer__copy">&copy; {{ now.Year }} Cloud &amp; Code</p>
+  </div>
+</footer>

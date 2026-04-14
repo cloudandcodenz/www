@@ -1,0 +1,25 @@
+{{ $posts := first 3 (where .Site.RegularPages "Section" "blog") }}
+<section class="blog-preview">
+  <div class="container">
+    <div class="blog-preview__header">
+      <h2 class="section-title">From the blog</h2>
+      <a href="/blog/" class="blog-preview__all">View all posts →</a>
+    </div>
+    {{ if $posts }}
+    <div class="blog-preview__grid">
+      {{ range $posts }}
+      <article class="post-card">
+        <a href="{{ .Permalink }}" class="post-card__link">
+          <time datetime="{{ .Date.Format "2006-01-02" }}" class="post-card__date">{{ .Date.Format "2 January 2006" }}</time>
+          <h3 class="post-card__title">{{ .Title }}</h3>
+          {{ with .Description }}<p class="post-card__excerpt">{{ . }}</p>{{ end }}
+          <span class="post-card__read">Read post →</span>
+        </a>
+      </article>
+      {{ end }}
+    </div>
+    {{ else }}
+    <p class="blog-preview__empty">Posts coming soon.</p>
+    {{ end }}
+  </div>
+</section>

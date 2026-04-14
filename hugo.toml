@@ -1,0 +1,17 @@
+baseURL = "https://cloudandcode.nz/"
+languageCode = "en-nz"
+title = "Cloud & Code"
+
+[params]
+  ctaURL      = "https://docs.google.com/forms/d/e/1FAIpQLSeDHh0ntMXtFJCYGckMyAd-JTOgi7I5yOyMYIfwUgtELGxi9A/viewform"
+  tagline     = "The Developer Experience Engineers"
+  description = "Hands-on DevOps, Cloud, and SRE work — using whatever tools, cloud, or stack actually fits your team."
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  noClasses = false
+
+[pagination]
+  pagerSize = 10

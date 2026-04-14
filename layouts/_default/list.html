@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="blog-list">
+  <div class="container">
+    <h1 class="blog-list__title">{{ .Title }}</h1>
+    {{ with .Description }}<p class="blog-list__desc">{{ . }}</p>{{ end }}
+    <div class="blog-list__posts">
+      {{ range .Pages }}
+      <article class="post-card">
+        <a href="{{ .Permalink }}" class="post-card__link">
+          <time datetime="{{ .Date.Format "2006-01-02" }}" class="post-card__date">{{ .Date.Format "2 January 2006" }}</time>
+          <h2 class="post-card__title">{{ .Title }}</h2>
+          {{ with .Description }}<p class="post-card__excerpt">{{ . }}</p>{{ end }}
+          <span class="post-card__read">Read post →</span>
+        </a>
+      </article>
+      {{ else }}
+      <p class="blog-list__empty">No posts yet — check back soon.</p>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

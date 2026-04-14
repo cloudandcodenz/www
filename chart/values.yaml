@@ -1,9 +1,9 @@
 replicaCount: 2
 
 image:
-  repository: cloudandcode
+  repository: ghcr.io/cloudandcodenz/www
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 service:
   port: 80
